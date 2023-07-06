@@ -1,7 +1,5 @@
 # 0x00. Python - Variable Annotations
 <hr>
-![](https://i.redd.it/y9y25tefi5401.png)
-<hr>
 
 ## LEARNING OBJECTIVES
 - Type annotations in Python 3
