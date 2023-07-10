@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
-"""4. Tasks 4. Tasks 4. Tasks 4. Tasks"""
+'''Task 4's module.
+'''
 import asyncio
-import itertools as it
 from typing import List
+
 
 task_wait_random = __import__('3-tasks').task_wait_random
 
 
 async def task_wait_n(n: int, max_delay: int) -> List[float]:
-    """ return the list of all the delays (float values)
-    generated from wait_random"""
-    resp = await asyncio.gather(*(it.repeat(task_wait_random(max_delay), n)))
-    return list(resp)
+    '''Executes task_wait_random n times.
+    '''
+    wait_times = await asyncio.gather(
+        *tuple(map(lambda _: task_wait_random(max_delay), range(n)))
+    )
+    return sorted(wait_times)
